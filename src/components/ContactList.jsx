@@ -6,7 +6,7 @@ export const ContactList = ({ contact, onDeleteContact }) => {
     <ul>
       {!contact.length ? (
         <p>
-          <b>Not contacts</b>
+          <b>No contacts</b>
         </p>
       ) : (
         contact.map(({ id, name, number }) => (
