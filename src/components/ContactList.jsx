@@ -1,6 +1,6 @@
 import React from 'react';
-import css from './ContactList.module.css';
 import PropTypes from 'prop-types';
+import { ContactItem } from './ContactItem';
 
 export const ContactList = ({ contact, onDeleteContact }) => {
   return (
@@ -12,17 +12,13 @@ export const ContactList = ({ contact, onDeleteContact }) => {
       ) : (
         <ul>
           {contact.map(({ id, name, number }) => (
-            <li key={id}>
-              <span className={css.user}>{name}:</span>
-              <span className={css.contact}>{number}</span>
-              <button
-                className={css.btn}
-                type="button"
-                onClick={() => onDeleteContact(id)}
-              >
-                Delete
-              </button>
-            </li>
+            <ContactItem
+              key={id}
+              contactId={id}
+              contactName={name}
+              contactNumber={number}
+              onDeleteContact={onDeleteContact}
+            />
           ))}
         </ul>
       )}
