@@ -8,15 +8,12 @@ export const ContactItem = ({
   contactNumber,
   onDeleteContact,
 }) => {
+  const handleDelete = () => onDeleteContact(contactId);
   return (
     <li>
       <span className={css.user}>{contactName}:</span>
       <span className={css.contact}>{contactNumber}</span>
-      <button
-        className={css.btn}
-        type="button"
-        onClick={() => onDeleteContact(contactId)}
-      >
+      <button className={css.btn} type="button" onClick={handleDelete}>
         Delete
       </button>
     </li>
